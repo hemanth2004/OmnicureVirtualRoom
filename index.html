@@ -7,12 +7,12 @@
   </head>
   <body style="text-align: center">
     <canvas id="unity-canvas" width=640 height=360 style="width: 640px; height: 360px; background: #231F20"></canvas>
-    <script src="Build/webgl_buld.loader.js"></script>
+    <script src="Build/webglbuldnoui.loader.js"></script>
     <script>
       createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/webgl_buld.data",
-        frameworkUrl: "Build/webgl_buld.framework.js",
-        codeUrl: "Build/webgl_buld.wasm",
+        dataUrl: "Build/webglbuldnoui.data",
+        frameworkUrl: "Build/webglbuldnoui.framework.js",
+        codeUrl: "Build/webglbuldnoui.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "BaNW",
         productName: "WRTC_Comms",
