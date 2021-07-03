@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | WRTC_Comms</title>
-  </head>
-  <body style="text-align: center">
-    <canvas id="unity-canvas" width=640 height=360 style="width: 640px; height: 360px; background: #231F20"></canvas>
-    <script src="Build/WebGLBuild.loader.js"></script>
+    <title>%UNITY_WEB_NAME%</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.javascript"></script>
+    <script src="%UNITY_WEBGL_LOADER_URL%"></script>
     <script>
-      createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/WebGLBuild.data",
-        frameworkUrl: "Build/WebGLBuild.framework.js",
-        codeUrl: "Build/WebGLBuild.wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "BaNW",
-        productName: "WRTC_Comms",
-        productVersion: "0.1",
-        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-      });
+        var gameInstance = UnityLoader.instantiate("gameContainer", "%UNITY_WEBGL_BUILD_URL%", {onProgress: UnityProgress});
     </script>
-  </body>
+</head>
+<body>
+<div class="webgl-content">
+    <div id="gameContainer" style="width: %UNITY_WIDTH%px; height: %UNITY_HEIGHT%px"></div>
+</div>
+<script src="TemplateData/responsive.javascript"></script>
+</body>
 </html>
