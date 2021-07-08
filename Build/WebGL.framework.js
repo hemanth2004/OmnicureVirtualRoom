@@ -1298,7 +1298,7 @@ function _emscripten_asm_const_ii(code, a0) {
  return ASM_CONSTS[code](a0);
 }
 STATIC_BASE = GLOBAL_BASE;
-STATICTOP = STATIC_BASE + 2685520;
+STATICTOP = STATIC_BASE + 2685712;
 __ATINIT__.push({
  func: (function() {
   __GLOBAL__sub_I_AccessibilityScriptingClasses_cpp();
@@ -3284,7 +3284,7 @@ __ATINIT__.push({
   ___emscripten_environ_constructor();
  })
 });
-var STATIC_BUMP = 2685520;
+var STATIC_BUMP = 2685712;
 Module["STATIC_BASE"] = STATIC_BASE;
 Module["STATIC_BUMP"] = STATIC_BUMP;
 var tempDoublePtr = STATICTOP;
@@ -11759,6 +11759,14 @@ function _exit(status) {
 function _flock(fd, operation) {
  return 0;
 }
+function _focusHandleAction(_name, _str) {
+ if (UnityLoader.SystemInfo.mobile == true) {
+  var _inputTextData = prompt("", Pointer_stringify(_str));
+  if (_inputTextData == null || _inputTextData == "") {} else {
+   SendMessage(Pointer_stringify(_name), "ReceiveInputData", _inputTextData);
+  }
+ }
+}
 function _getenv(name) {
  if (name === 0) return 0;
  name = Pointer_stringify(name);
@@ -19009,6 +19017,7 @@ Module.asmLibraryArg = {
  "_emscripten_webgl_make_context_current": _emscripten_webgl_make_context_current,
  "_exit": _exit,
  "_flock": _flock,
+ "_focusHandleAction": _focusHandleAction,
  "_getenv": _getenv,
  "_gethostbyaddr": _gethostbyaddr,
  "_gethostbyname": _gethostbyname,
